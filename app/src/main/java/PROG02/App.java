@@ -9,9 +9,8 @@ public class App {
     }
 
     public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
-        new ThreadWithExtends("T1").start();
+        new ThreadWithExtends("Kerosene").start();
         Runnable run = new ThreadWithImplements();
-        new Thread(run,"T2").start();
+        new Thread(run,"Oxygen").start();
     }
 }
