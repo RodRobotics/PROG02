@@ -14,7 +14,10 @@ public class ThreadWithImplements implements Runnable  {
             for (int i = 0; i < 10; i++) {
                 System.out.println(i + " " + name);
                 Thread.sleep((int)(random()*1000));
+
             }
+            Thread.yield();
+            System.out.println("yield over");
         } catch (InterruptedException e) {
             System.err.println("Interrupted");
         }
