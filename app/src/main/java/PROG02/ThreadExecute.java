@@ -16,15 +16,17 @@ public class ThreadExecute {
         //Runnable run = new ThreadWithImplements();
         //new Thread(new ThreadWithImplements(),"Oxygen").start();
         //Runnable run = new ThreadWithImplements();
-        Thread thread = new Thread(new ThreadWithImplements(),"Oxygen");
-        thread.start();
-        thread.interrupt();
-        if(thread.isInterrupted()){
+        //Thread thread = new Thread(new ThreadWithImplements(),"Oxygen");
+        //thread.start();
+        //thread.interrupt();
+        //if(thread.isInterrupted()){
 
-            System.out.println("I got Interrupted");
-        }
+          //  System.out.println("I got Interrupted");
+       // }
 
-       System.out.println(Thread.currentThread().getId());
+      // System.out.println(Thread.currentThread().getId());
+        new Thread(new ThreadWithImplements(),"Oxygen").start();
+        new ThreadWithExtends("Kerosene").start();
 
 
     }

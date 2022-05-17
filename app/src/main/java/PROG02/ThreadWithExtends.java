@@ -11,7 +11,9 @@ public class ThreadWithExtends extends Thread{
 
     public  void run(){
         System.out.println("Fuell Rocket with: " + getName());
+
         try {
+            Thread.currentThread().join();
             for (int i = 0; i < 10; i++) {
                 System.out.println(i + " " + getName());
                 Thread.sleep((int)(random()*1000));
