@@ -7,7 +7,7 @@ public class ThreadWithImplements implements Runnable  {
 
 
     @Override
-    public void run() {
+    public synchronized void run() {
         String name = Thread.currentThread().getName();
         System.out.println("Fuell Rocket with: " + name);
         try {

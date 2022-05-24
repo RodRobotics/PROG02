@@ -9,7 +9,7 @@ public class ThreadWithExtends extends Thread{
     }
 
 
-    public  void run(){
+    public synchronized void run(){
         System.out.println("Fuell Rocket with: " + getName());
 
         try {

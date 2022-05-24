@@ -3,12 +3,14 @@
  */
 package PROG02;
 
+import java.util.concurrent.TimeUnit;
+
 public class ThreadExecute {
     public String getGreeting() {
         return "Hello World!";
     }
 
-    public  void threadExecute() {
+    public synchronized void threadExecute() {
        //new ThreadWithExtends("Kerosene").start();
         //ThreadWithExtends threadWithExtends = new ThreadWithExtends("Test01");
         //threadWithExtends.start();
@@ -25,8 +27,27 @@ public class ThreadExecute {
        // }
 
       // System.out.println(Thread.currentThread().getId());
-        new Thread(new ThreadWithImplements(),"Oxygen").start();
-        new ThreadWithExtends("Kerosene").start();
+        Thread thread = new Thread(new ThreadWithImplements(),"Oxygen");
+         ThreadWithExtends  threadWithExtends = new ThreadWithExtends("Kerosene");
+         thread.start();
+         threadWithExtends.start();
+
+        try { TimeUnit.SECONDS.sleep(1);
+        } catch(InterruptedException ex) {}
+
+         try {
+             thread.wait();
+         threadWithExtends.wait();}
+         catch
+         (InterruptedException ex) {}
+
+
+
+
+         threadWithExtends.notify();
+         thread.notify();
+
+
 
 
     }

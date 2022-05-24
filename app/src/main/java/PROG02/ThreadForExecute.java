@@ -9,7 +9,7 @@ public class ThreadForExecute implements Runnable{
     }
 
         @Override
-    public void run() {
+    public synchronized void run() {
         System.out.println(Thread.currentThread().getId());
         System.out.println("Executing Task " + id +
                 " at " + (System.currentTimeMillis()-starttime) + " ms after start " +
