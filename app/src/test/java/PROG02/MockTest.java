@@ -14,7 +14,7 @@ public class MockTest {
 
 
     @Test
-    void appHasAGreeting() {
+    void appHasAGreeting() throws IllegalArgumentException  {
 
         Auto automock = mock(Auto.class);
         when(automock.getPedalPosition()).thenReturn(5);
